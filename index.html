@@ -20,7 +20,7 @@ body {
 #spinArea {
   position: absolute;
   inset: 0;
-  transition: transform 12s cubic-bezier(.08,.65,.12,1);
+  transition: transform 14s cubic-bezier(.08,.65,.12,1);
   transform-origin: 50% 50%;
 }
 
@@ -48,7 +48,7 @@ body {
 }
 
 .click-wedge:hover {
-  fill: rgba(255, 255, 255, 0.20);
+  fill: rgba(255, 255, 255, 0.18);
 }
 
 .outer-ring-link:hover {
@@ -77,58 +77,16 @@ body {
 
   <div id="spinArea">
     <img src="Assessment.png" class="wheel-image" alt="Literacy for MLs Wheel">
+    <svg id="wedgeMap" class="click-map" viewBox="0 0 100 100"></svg>
   </div>
 
   <svg class="click-map" viewBox="0 0 100 100">
-
-    <!-- THINNER OUTER RING LINK -->
     <a href="https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/oracy" target="_blank">
       <path class="outer-ring-link" fill-rule="evenodd" d="
         M 50 1 A 49 49 0 1 1 49.99 1 Z
-        M 50 8 A 42 42 0 1 0 50.01 8 Z
+        M 50 7 A 43 43 0 1 0 50.01 7 Z
       "></path>
     </a>
-
-    <!-- This wedge now goes to Assessment -->
-    <a href="https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/assessment" target="_blank">
-      <path class="click-wedge" d="M 50 6 A 44 44 0 0 1 81.11 18.89 L 59.90 40.10 A 14 14 0 0 0 50 36 Z"></path>
-    </a>
-
-    <!-- This wedge now goes to Culturally and Linguistically Responsive -->
-    <a href="https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/culturally-and-linguistically-responsive" target="_blank">
-      <path class="click-wedge" d="M 81.11 18.89 A 44 44 0 0 1 94 50 L 64 50 A 14 14 0 0 0 59.90 40.10 Z"></path>
-    </a>
-
-    <!-- This wedge now goes to Cross Linguistic Connections -->
-    <a href="https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/cross-linguistic-connections" target="_blank">
-      <path class="click-wedge" d="M 94 50 A 44 44 0 0 1 81.11 81.11 L 59.90 59.90 A 14 14 0 0 0 64 50 Z"></path>
-    </a>
-
-    <!-- This wedge now goes to Syntax -->
-    <a href="https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/syntax" target="_blank">
-      <path class="click-wedge" d="M 81.11 81.11 A 44 44 0 0 1 50 94 L 50 64 A 14 14 0 0 0 59.90 59.90 Z"></path>
-    </a>
-
-    <!-- This wedge now goes to Text Comprehension and Written Expression -->
-    <a href="https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/text-comprehension-and-written-expression" target="_blank">
-      <path class="click-wedge" d="M 50 94 A 44 44 0 0 1 18.89 81.11 L 40.10 59.90 A 14 14 0 0 0 50 64 Z"></path>
-    </a>
-
-    <!-- This wedge now goes to Vocabulary and Morphology -->
-    <a href="https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/vocabulary-and-morphology" target="_blank">
-      <path class="click-wedge" d="M 18.89 81.11 A 44 44 0 0 1 6 50 L 36 50 A 14 14 0 0 0 40.10 59.90 Z"></path>
-    </a>
-
-    <!-- This wedge now goes to Phonological Awareness -->
-    <a href="https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/phonological-awareness" target="_blank">
-      <path class="click-wedge" d="M 6 50 A 44 44 0 0 1 18.89 18.89 L 40.10 40.10 A 14 14 0 0 0 36 50 Z"></path>
-    </a>
-
-    <!-- This wedge now goes to Phonics and Spelling -->
-    <a href="https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/phonics-and-spelling" target="_blank">
-      <path class="click-wedge" d="M 18.89 18.89 A 44 44 0 0 1 50 6 L 50 36 A 14 14 0 0 0 40.10 40.10 Z"></path>
-    </a>
-
   </svg>
 
   <button class="center-click" onclick="spinWheel()" aria-label="Spin wheel"></button>
@@ -138,10 +96,104 @@ body {
 <script>
 let rotation = 0;
 
+const wedges = [
+  {
+    label: "Assessment",
+    angle: -90,
+    url: "https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/assessment"
+  },
+  {
+    label: "Culturally and Linguistically Responsive",
+    angle: -45,
+    url: "https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/culturally-and-linguistically-responsive"
+  },
+  {
+    label: "Cross Linguistic Connections",
+    angle: 0,
+    url: "https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/cross-linguistic-connections"
+  },
+  {
+    label: "Syntax",
+    angle: 45,
+    url: "https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/syntax"
+  },
+  {
+    label: "Text Comprehension and Written Expression",
+    angle: 90,
+    url: "https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/text-comprehension-and-written-expression"
+  },
+  {
+    label: "Vocabulary and Morphology",
+    angle: 135,
+    url: "https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/vocabulary-and-morphology"
+  },
+  {
+    label: "Phonological Awareness",
+    angle: 180,
+    url: "https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/phonological-awareness"
+  },
+  {
+    label: "Phonics and Spelling",
+    angle: 225,
+    url: "https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/phonics-and-spelling"
+  }
+];
+
+function polarToXY(cx, cy, r, angleDegrees) {
+  const angleRadians = angleDegrees * Math.PI / 180;
+  return {
+    x: cx + r * Math.cos(angleRadians),
+    y: cy + r * Math.sin(angleRadians)
+  };
+}
+
+function wedgePath(centerAngle) {
+  const cx = 50;
+  const cy = 50;
+  const outerR = 46;
+  const innerR = 13;
+  const half = 22.5;
+
+  const start = centerAngle - half;
+  const end = centerAngle + half;
+
+  const p1 = polarToXY(cx, cy, outerR, start);
+  const p2 = polarToXY(cx, cy, outerR, end);
+  const p3 = polarToXY(cx, cy, innerR, end);
+  const p4 = polarToXY(cx, cy, innerR, start);
+
+  return `
+    M ${p1.x} ${p1.y}
+    A ${outerR} ${outerR} 0 0 1 ${p2.x} ${p2.y}
+    L ${p3.x} ${p3.y}
+    A ${innerR} ${innerR} 0 0 0 ${p4.x} ${p4.y}
+    Z
+  `;
+}
+
+function drawWedges() {
+  const svg = document.getElementById("wedgeMap");
+
+  wedges.forEach(wedge => {
+    const link = document.createElementNS("http://www.w3.org/2000/svg", "a");
+    link.setAttribute("href", wedge.url);
+    link.setAttribute("target", "_blank");
+
+    const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path.setAttribute("class", "click-wedge");
+    path.setAttribute("d", wedgePath(wedge.angle));
+
+    link.appendChild(path);
+    svg.appendChild(link);
+  });
+}
+
 function spinWheel() {
-  rotation += 360 + Math.floor(Math.random() * 90);
+  rotation += 360 + Math.floor(Math.random() * 60);
   document.getElementById("spinArea").style.transform = "rotate(" + rotation + "deg)";
 }
+
+drawWedges();
 </script>
 
 </body>
