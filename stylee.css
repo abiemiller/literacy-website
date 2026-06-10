@@ -1,0 +1,61 @@
+body {
+  margin: 0;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wheel-stage {
+  position: relative;
+  width: min(95vw, 700px);
+  height: min(95vw, 700px);
+  margin: auto;
+}
+
+.spin-area {
+  position: absolute;
+  inset: 0;
+  transition: transform 3s ease-out;
+  transform-origin: center;
+}
+
+.wheel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.hotspot {
+  position: absolute;
+  width: 26%;
+  height: 26%;
+  border-radius: 50%;
+  cursor: pointer;
+  background: transparent;
+}
+
+/* Move these if the clickable areas need adjusting */
+.hs1 { top: 10%; left: 51%; }
+.hs2 { top: 28%; left: 66%; }
+.hs3 { top: 53%; left: 66%; }
+.hs4 { top: 68%; left: 51%; }
+.hs5 { top: 68%; left: 25%; }
+.hs6 { top: 53%; left: 9%; }
+.hs7 { top: 28%; left: 9%; }
+.hs8 { top: 10%; left: 25%; }
+
+.center-click {
+  position: absolute;
+  z-index: 20;
+  top: 50%;
+  left: 50%;
+  width: 28%;
+  height: 28%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
