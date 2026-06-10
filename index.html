@@ -20,9 +20,8 @@ body {
 #spinArea {
   position: absolute;
   inset: 0;
-  transition: transform 8s cubic-bezier(.08,.65,.12,1);
+  transition: transform 10s cubic-bezier(.08,.65,.12,1);
   transform-origin: 50% 50%;
-  will-change: transform;
 }
 
 .wheel-image {
@@ -49,11 +48,11 @@ body {
 }
 
 .click-wedge:hover {
-  fill: rgba(255, 255, 255, 0.22);
+  fill: rgba(255, 255, 255, 0.20);
 }
 
 .outer-ring-link:hover {
-  fill: rgba(255, 255, 255, 0.14);
+  fill: rgba(255, 255, 255, 0.12);
 }
 
 .center-click {
@@ -76,69 +75,62 @@ body {
 
 <div class="wheel-stage">
 
-  <!-- THE IMAGE SPINS -->
   <div id="spinArea">
     <img src="Assessment.png" class="wheel-image" alt="Literacy for MLs Wheel">
   </div>
 
-  <!-- CLICKABLE AREAS STAY STILL -->
   <svg class="click-map" viewBox="0 0 100 100">
 
-    <!-- OUTER RING LINK -->
+    <!-- OUTER RING -->
     <a href="https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/oracy" target="_blank">
       <path class="outer-ring-link" fill-rule="evenodd" d="
-        M 50 1
-        A 49 49 0 1 1 49.99 1
-        Z
-        M 50 15
-        A 35 35 0 1 0 50.01 15
-        Z
+        M 50 1 A 49 49 0 1 1 49.99 1 Z
+        M 50 15 A 35 35 0 1 0 50.01 15 Z
       "></path>
     </a>
 
-    <!-- Visual wedge: Phonics and Spelling | Goes to: Phonological Awareness -->
-    <a href="https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/phonological-awareness" target="_blank">
+    <!-- Phonics and Spelling -->
+    <a href="https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/phonics-and-spelling" target="_blank">
       <path class="click-wedge" d="M 50 14 A 36 36 0 0 1 75.46 24.54 L 63.44 36.56 A 19 19 0 0 0 50 31 Z"></path>
     </a>
 
-    <!-- Visual wedge: Assessment | Goes to: Phonics and Spelling -->
-    <a href="https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/phonics-and-spelling" target="_blank">
+    <!-- Assessment -->
+    <a href="https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/assessment" target="_blank">
       <path class="click-wedge" d="M 75.46 24.54 A 36 36 0 0 1 86 50 L 69 50 A 19 19 0 0 0 63.44 36.56 Z"></path>
     </a>
 
-    <!-- Visual wedge: Culturally and Linguistically Responsive | Goes to: Assessment -->
-    <a href="https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/assessment" target="_blank">
+    <!-- Culturally and Linguistically Responsive -->
+    <a href="https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/culturally-and-linguistically-responsive" target="_blank">
       <path class="click-wedge" d="M 86 50 A 36 36 0 0 1 75.46 75.46 L 63.44 63.44 A 19 19 0 0 0 69 50 Z"></path>
     </a>
 
-    <!-- Visual wedge: Cross Linguistic Connections | Goes to: Culturally and Linguistically Responsive -->
-    <a href="https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/culturally-and-linguistically-responsive" target="_blank">
+    <!-- Cross Linguistic Connections -->
+    <a href="https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/cross-linguistic-connections" target="_blank">
       <path class="click-wedge" d="M 75.46 75.46 A 36 36 0 0 1 50 86 L 50 69 A 19 19 0 0 0 63.44 63.44 Z"></path>
     </a>
 
-    <!-- Visual wedge: Syntax | Goes to: Cross Linguistic Connections -->
-    <a href="https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/cross-linguistic-connections" target="_blank">
+    <!-- Syntax -->
+    <a href="https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/syntax" target="_blank">
       <path class="click-wedge" d="M 50 86 A 36 36 0 0 1 24.54 75.46 L 36.56 63.44 A 19 19 0 0 0 50 69 Z"></path>
     </a>
 
-    <!-- Visual wedge: Text Comprehension and Written Expression | Goes to: Syntax -->
-    <a href="https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/syntax" target="_blank">
+    <!-- Text Comprehension and Written Expression -->
+    <a href="https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/text-comprehension-and-written-expression" target="_blank">
       <path class="click-wedge" d="M 24.54 75.46 A 36 36 0 0 1 14 50 L 31 50 A 19 19 0 0 0 36.56 63.44 Z"></path>
     </a>
 
-    <!-- Visual wedge: Vocabulary and Morphology | Goes to: Text Comprehension and Written Expression -->
-    <a href="https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/text-comprehension-and-written-expression" target="_blank">
+    <!-- Vocabulary and Morphology -->
+    <a href="https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/vocabulary-and-morphology" target="_blank">
       <path class="click-wedge" d="M 14 50 A 36 36 0 0 1 24.54 24.54 L 36.56 36.56 A 19 19 0 0 0 31 50 Z"></path>
     </a>
 
-    <!-- Visual wedge: Phonological Awareness | Goes to: Vocabulary and Morphology -->
-    <a href="https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/vocabulary-and-morphology" target="_blank">
+    <!-- Phonological Awareness -->
+    <a href="https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/phonological-awareness" target="_blank">
       <path class="click-wedge" d="M 24.54 24.54 A 36 36 0 0 1 50 14 L 50 31 A 19 19 0 0 0 36.56 36.56 Z"></path>
     </a>
 
   </svg>
 
-  <!-- CENTER CLICK SPINS -->
   <button class="center-click" onclick="spinWheel()" aria-label="Spin wheel"></button>
 
 </div>
@@ -147,7 +139,7 @@ body {
 let rotation = 0;
 
 function spinWheel() {
-  rotation += 360 + Math.floor(Math.random() * 180);
+  rotation += 360 + Math.floor(Math.random() * 120);
   document.getElementById("spinArea").style.transform = "rotate(" + rotation + "deg)";
 }
 </script>
